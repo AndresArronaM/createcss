@@ -1,0 +1,25 @@
+{
+  "name": "createcss",
+  "version": "0.0.1",
+  "description": "createcss =========",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/frankrowe/createcss.git"
+  },
+  "author": "Frank Rowe <fsrowe@gmail.com> (http://frankrowe.org/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/frankrowe/createcss/issues"
+  },
+  "homepage": "https://github.com/frankrowe/createcss",
+  "devDependencies": {
+    "tap": "^0.4.13"
+  }
+}
