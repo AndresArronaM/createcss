@@ -14,46 +14,21 @@ Createcss.prototype = {
 
     var stylesheet
     var mediaType
-    if (document.styleSheets.length > 0) {
-      for( i = 0; i < document.styleSheets.length; i++) {
-        if (document.styleSheets[i].disabled) {
-          continue
-        }
-        var media = document.styleSheets[i].media
-        mediaType = typeof media
 
-        if (mediaType == "string") {
-          if (media == "" || (media.indexOf("screen") != -1)) {
-            styleSheet = document.styleSheets[i]
-          }
-        } else if (mediaType == "object") {
-          if (media.mediaText == "" || (media.mediaText.indexOf("screen") != -1)) {
-            styleSheet = document.styleSheets[i]
-          }
-        }
+    var styleSheetElement = document.createElement("style")
+    styleSheetElement.type = "text/css"
 
-        if ( typeof styleSheet != "undefined") {
-          break
-        }
+    document.getElementsByTagName("head")[0].appendChild(styleSheetElement)
+
+    for( i = 0; i < document.styleSheets.length; i++) {
+      if (document.styleSheets[i].disabled) {
+        continue
       }
+      styleSheet = document.styleSheets[i]
     }
 
-    if ( typeof styleSheet == "undefined") {
-      var styleSheetElement = document.createElement("style")
-      styleSheetElement.type = "text/css"
-
-      document.getElementsByTagName("head")[0].appendChild(styleSheetElement)
-
-      for( i = 0; i < document.styleSheets.length; i++) {
-        if (document.styleSheets[i].disabled) {
-          continue
-        }
-        styleSheet = document.styleSheets[i]
-      }
-
-      var media = styleSheet.media
+    var media = styleSheet.media
       mediaType = typeof media
-    }
 
     if (mediaType == "string") {
       for( i = 0; i < styleSheet.rules.length; i++) {
